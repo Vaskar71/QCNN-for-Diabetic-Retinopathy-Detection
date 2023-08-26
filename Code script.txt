@@ -1,0 +1,25 @@
+India is a diabteic capital, with diabetic retinopathy predicted to double in the next 20-30 years. Vision-based screening and classification algorithms could help detect the disease early. Integrating quantum computing with conventional image classification methods is theoretically feasible, but existing techniques have failed to achieve high accuracy. This study proposes a quantum-based deep convolutional neural network to identify disease grades from the Indian Diabetic Retinopathy Image Dataset, achieving 100% accuracy, precision, recall, specificity, and f1-score.
+
+
+
+
+The code imports various modules and libraries for tasks like quantum computing, scientific computing, image processing, file handling, and progress bar. These modules include TensorFlow, cirq, numpy, matplotlib, cv2, PIL, skimage, os, and glob. They provide functions for creating, manipulating, and testing quantum circuits, manipulating arrays, matrices, vectors, and plots, and displaying a progress bar for loops and iterations.
+
+
+The second cell defines dataset folders for images and groundtruths, with subfolders based on lesion type. It defines image size and channels, and functions for loading and preprocessing images and groundtruths. It creates empty lists for storage, loops over each segment subfolder, loads and preprocesses images and groundtruths, and converts lists to numpy arrays for further processing. The shapes of the arrays are printed, with the number of images and groundtruths being specified.
+
+
+
+The 3rd cell code defines a function to encode an image into a 5-dimensional quantum state and groundtruth into a one-dimensional quantum state. It reshapes the image into a 1D array, normalizes it to have unit norm, creates a circuit using Cirq, adds a state preparation gate for each qubit, and encodes a batch of images into quantum data using amplitude encoding. The function creates an empty list, loops over each image, and converts the list of circuits to a tensor using TensorFlow Quantum. The code then encodes the images and groundtruths into quantum data using amplitude encoding, printing the shapes of the quantum data tensors.
+
+
+
+The fourth cell defines four filters for quantum data, creating four different quantum circuits. A function is defined to create a parameterized quantum circuit, using Cirq, Hadamard gates, and parameterized rotation gates. A measurement operator is defined using an empty list, a random subset of qubits, and a Pauli sum of Z operators. The filter circuits and output operators are created using the create_filter_circuit and create_output_operator functions, respectively. The outputs are printed, showcasing the quantum circuits and measurements. The process is repeated for each filter, ensuring accurate and efficient measurement.
+
+
+
+The fifth cell defines the batch size and number of epochs for training a quantum convolutional neural network model. It creates a quantum convolutional layer using TensorFlow Keras, a high-level API for building and training neural networks. The PQC layer from TensorFlow Quantum applies a quantum convolution filter to the quantum data, with the measurement operator defining the output from the quantum state. The batch normalization layer normalizes the output to zero mean and unit variance, stabilizing the training process and reducing overfitting. The ReLU activation layer introduces nonlinearity and sparsity to the model. The classical dense layer performs linear transformation followed by nonlinear activation on the classical data. The model is built using the Sequential class from TensorFlow Keras, with an amplitude encoding circuit added to encode images into quantum data. This process ensures the model is stable and efficient.The model is trained on quantum data using a combination of convolutional layers, flatten layers, classical dense layers, and a final dense layer with sigmoid activation. The model is compile with binary crossentropy loss and Adam optimizer, ensuring accurate predictions. The model summary displays the structure and parameters, including layers, input and output shapes, and trainable and non-trainable parameters. The fit method uses quantum data tensors as inputs and performs steps like shuffled data, batch splitting, model computation, loss calculation, and metrics like accuracy. The model is then trained on images and groundtruths, using the same steps for a validation set, which evaluates model performance. The model summary is printed and the model summary is printed.
+
+
+
+The sixth cell code evaluates a model using TensorFlow Keras' predict method, outputs predictions for each sample, and reshapes them to match the images. It plots images and their groundtruths and predictions using plot_image_and_groundtruth and plot_image_and_prediction functions. The ROC curve and AUC score are plotted for the test set, showing the model's performance in distinguishing between positive and negative classes at different thresholds. A higher AUC score indicates better performance.
