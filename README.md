@@ -1,4 +1,4 @@
-# QCNN for Diabetic Retinopathy Detection
+# QCNN for Diabetic Retinopathy Detection (Experimental)
 
 ## 🏥 Project Overview
 Quantum Convolutional Neural Networks (QCNN) for detecting Diabetic Retinopathy using quantum computing techniques. This project integrates **Qiskit**, **TensorFlow Quantum**, and **image processing libraries** to enhance medical imaging analysis with quantum-based AI models.
