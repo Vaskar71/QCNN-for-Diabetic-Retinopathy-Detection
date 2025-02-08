@@ -5,18 +5,6 @@ Quantum Convolutional Neural Networks (QCNN) for detecting Diabetic Retinopathy 
 
 ---
 
-## 📖 Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgments](#acknowledgments)
-
----
-
 ## ⚙️ Installation
 ### Prerequisites
 Ensure you have the following installed:
